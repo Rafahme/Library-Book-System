@@ -69,7 +69,7 @@ public:
 int main() {
     int main() {
     cout << "==============================\n";
-    cout << " Welcome to the Library System\n";
+    cout << " Welcome to Library System\n";
     cout << "==============================\n\n";
     const int maxLength = 10;
     Book* library[maxLength];
