@@ -151,7 +151,8 @@ int main() {
             } else {
                 library[length] = new EBook();
             }
-
+            cout << "Welcome to the Library System!";
+            getline(cin, t);
             cout << "Enter title: ";
             getline(cin, t);
             cout << "Enter author: ";
