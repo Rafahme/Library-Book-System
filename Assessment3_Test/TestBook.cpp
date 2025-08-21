@@ -1,9 +1,12 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 #include "Book.h"
 using namespace std;
 
 int main() {
-    cout << "==== Testing Book Class ====\n" << endl;
+    cout << "==== Testing Book Class ====
+" << endl;
 
     // ✅ Correct initialisation
     Book book1;
@@ -23,5 +26,24 @@ int main() {
     book3.setBookDetails("", "", "", "", "");
     book3.displayBookDetails();
 
+    // Sorting test
+    cout << "\n==== Sorting Books ====" << endl;
+    vector<Book> library = {book1, book2, book3};
+
+    // Ascending order
+    sort(library.begin(), library.end(), [](Book a, Book b) {
+        return a.getISBN() < b.getISBN();
+    });
+    cout << "\n[Ascending Order by ISBN]" << endl;
+    for (Book b : library) b.displayBookDetails();
+
+    // Descending order
+    sort(library.begin(), library.end(), [](Book a, Book b) {
+        return a.getISBN() > b.getISBN();
+    });
+    cout << "\n[Descending Order by ISBN]" << endl;
+    for (Book b : library) b.displayBookDetails();
+
     return 0;
 }
+
